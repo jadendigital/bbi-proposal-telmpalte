@@ -242,21 +242,21 @@ a{color:inherit}
 /* ---------- who we are · big stats ---------- */
 .statgrid{display:grid;grid-template-columns:1fr;gap:0 32px;margin-top:clamp(24px,4vh,44px)}
 @media(min-width:860px){.statgrid{grid-template-columns:repeat(2,1fr)}}
-.statgrid .s{background:none;border-top:1px solid #545D64;padding:32px}
-.statgrid .s:nth-last-child(-n+2){border-bottom:1px solid #545D64}
-@media(max-width:860px){.statgrid .s:nth-last-child(-n+2){border-bottom:none}.statgrid .s:last-child{border-bottom:1px solid #545D64}}
-.statgrid .s .n{font-family:var(--sans);font-weight:500;font-size:clamp(44px,4.5vw,72px);line-height:1;color:#fff}
-.statgrid .s .l{font-size:14px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-top:10px}
-.statgrid .s .d{font-size:12px;line-height:1.6;color:var(--w-faded);margin-top:8px;max-width:34ch}
+.statgrid .s{background:none;border-top:1px solid var(--line);padding:32px}
+.statgrid .s:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+@media(max-width:860px){.statgrid .s:nth-last-child(-n+2){border-bottom:none}.statgrid .s:last-child{border-bottom:1px solid var(--line)}}
+.statgrid .s .n{font-family:var(--sans);font-weight:500;font-size:clamp(44px,4.5vw,72px);line-height:1;color:var(--head)}
+.statgrid .s .l{font-size:14px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-top:10px}
+.statgrid .s .d{font-size:12px;line-height:1.6;color:var(--faded);margin-top:8px;max-width:34ch}
 .revpanel{margin-top:clamp(34px,6vh,56px)}
-.revpanel .phead{display:flex;justify-content:space-between;font-family:var(--mono);font-weight:500;font-size:var(--t-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--w-faded);margin-bottom:14px}
+.revpanel .phead{display:flex;justify-content:space-between;font-family:var(--mono);font-weight:500;font-size:var(--t-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faded);margin-bottom:14px}
 .revwrap{display:grid;grid-template-columns:1fr;gap:10px}
 @media(min-width:860px){.revwrap{grid-template-columns:1fr 1fr}}
-.revrow{background:var(--dark-card);padding:32px}
+.revrow{background:#F5F6F6;padding:32px}
 .revrow .top{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px}
-.revrow .by{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--w-faded)}
-.revrow .stars{font-size:11px;letter-spacing:2px;color:#fff}
-.revrow p{margin:0;font-size:14px;color:rgba(255,255,255,.8)}
+.revrow .by{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--faded)}
+.revrow .stars{font-size:11px;letter-spacing:2px;color:var(--ink)}
+.revrow p{margin:0;font-size:14px;color:var(--faded)}
 
 /* ---------- the return · static stat grid ---------- */
 .retgrid{display:grid;grid-template-columns:1fr;gap:32px;margin-top:clamp(28px,5vh,48px)}
@@ -338,7 +338,7 @@ a{color:inherit}
 .acceptsteps{border-top:1px solid var(--w-line);max-width:520px;margin-top:34px}
 .acceptsteps .row{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--w-line);font-size:13px;color:var(--w-faded)}
 .acceptsteps .no{font-family:var(--mono);font-weight:500;font-size:var(--t-mono);color:#fff}
-footer{background:#141414;color:var(--w-faded);padding:72px 0 56px;font-size:12px}
+footer{background:#9DB5C1;color:var(--w-faded);padding:72px 0 56px;font-size:12px}
 footer .wrap{border-top:1px solid var(--w-line);padding-top:26px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:22px;align-items:flex-end}
 footer .tag{font-family:'Retro Signature',var(--script);font-weight:400;font-size:34px;color:#fff;line-height:1.3}
 footer .logo svg{width:128px;height:auto;color:#fff;margin-bottom:14px}
@@ -656,7 +656,7 @@ footer a{color:rgba(255,255,255,.75)}
 </section>
 
 <!-- who we are · dark -->
-<section class="sec s-dark" id="who">
+<section class="sec" id="who" style="background:#FFFFFF">
   <div class="wrap railgrid">
     <div class="rail">
       <div class="sticky reveal">
@@ -665,7 +665,7 @@ footer a{color:rgba(255,255,255,.75)}
       </div>
     </div>
     <div>
-      <h2 class="bighead reveal d1" style="color:#fff">Scale most stylists cannot match, on your home alone</h2>
+      <h2 class="bighead reveal d1">Scale most stylists cannot match, on your home alone</h2>
       <div class="statgrid reveal d1">
         <div class="s"><div class="n">1,200+</div><div class="l">homes styled a year</div><div class="d">A scale of stock, schemes and installs that keeps every campaign moving on time.</div></div>
         <div class="s"><div class="n">4,000m²</div><div class="l">distribution centre</div><div class="d">No third parties on your doorstep. The people who plan your home deliver it.</div></div>
