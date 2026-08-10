@@ -327,11 +327,13 @@ a{color:inherit}
 .tstep h3{font-family:var(--disp);font-weight:400;font-size:22px;letter-spacing:0;color:var(--ink);margin:0 0 8px}
 .tstep p{font-size:13.5px;line-height:1.7;color:var(--faded);margin:0}
 @media(max-width:760px){
-  .tline .track{top:0;bottom:0;left:5px;right:auto;width:1px;height:auto}
+  .tline .track{display:none}
   .tsteps{grid-template-columns:1fr;gap:30px}
   .tstep{padding-top:0;padding-left:32px}
+  .tstep::before{content:"";position:absolute;left:5px;top:9px;bottom:-39px;width:1px;background:var(--line)}
+  .tstep:last-child::before{display:none}
   .tstep .dot{top:9px;left:0;width:12px;height:1px}
-  .tstep.now .dot{height:2px}
+  .tstep.now .dot{width:12px;height:2px}
 }
 
 /* ---------- faq ---------- */
