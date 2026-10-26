@@ -177,6 +177,11 @@ a{color:inherit}
 .briefcols h4{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:.08em;text-transform:uppercase;font-weight:300;margin:0 0 10px}
 .briefcols p{color:var(--faded);max-width:48ch}
 .broadline{margin-top:clamp(34px,6vh,54px)}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter);margin-top:clamp(30px,5vh,52px)}
+.principles .pr{border-top:1px solid var(--line);padding-top:18px}
+.principles b{display:block;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.principles p{font-size:13.5px;line-height:1.7;color:var(--faded);margin:0;max-width:40ch}
+@media(max-width:860px){.principles{grid-template-columns:1fr;gap:20px}}
 .broadline p{font-family:var(--disp);font-weight:400;font-size:clamp(22px,2.2vw,30px);line-height:1.35;max-width:900px;margin:0;color:var(--head)}
 
 /* ---------- design direction ---------- */
@@ -303,13 +308,27 @@ a{color:inherit}
 /* ---------- investment ---------- */
 .invgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,72px);align-items:start}
 @media(max-width:860px){.invgrid{grid-template-columns:1fr}}
+.paychoose{margin-top:clamp(44px,7vh,72px)}
+.paygrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter);margin-top:14px;align-items:start}
+@media(max-width:860px){.paygrid{grid-template-columns:1fr}}
+.payopt{background:#F5F6F6;border:1px solid transparent;border-radius:8px;padding:28px;cursor:pointer;transition:border-color .2s}
+.payopt.on{border-color:var(--ink)}
+.payopt .oh{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:10px}
+.payopt .oh b{font-family:var(--sans);font-weight:400;font-size:18px;color:var(--ink)}
+.payopt .odot{flex:0 0 16px;width:16px;height:16px;border-radius:50%;border:1px solid var(--ink);position:relative}
+.payopt.on .odot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--ink)}
+.payopt p{font-size:13.5px;line-height:1.7;color:var(--faded);margin:0 0 14px}
+.payopt ul{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
+.payopt li{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.payopt .fine, .paychoose .payfine{font-size:11px;line-height:1.6;color:var(--faded);margin:0}
+.paychoose .payfine{margin-top:16px;max-width:76ch}
 .inclist{border-top:1px solid var(--line)}
 .inclist .row{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
 .inclist .no{font-family:var(--mono);font-weight:300;font-size:var(--t-mono);color:var(--faded);padding-top:3px}
 .inclist b{font-weight:300;display:block}
 .inclist small{color:var(--faded);font-size:12.5px}
 .pricepanel{position:sticky;top:84px}
-.pricepanel .phead,.invcol .phead{display:flex;justify-content:space-between;font-family:var(--mono);font-size:var(--t-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faded);margin-bottom:14px}
+.pricepanel .phead,.invcol .phead,.paychoose .phead{display:flex;justify-content:space-between;font-family:var(--mono);font-size:var(--t-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faded);margin-bottom:14px}
 .pricepanel .amtcard{background:#F5F6F6;padding:24px;margin-bottom:8px}
 .pricepanel .free{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);border-radius:999px;padding:6px 12px;margin-bottom:18px}
 .pricepanel .amt{font-family:var(--sans);font-weight:300;font-size:clamp(46px,4.6vw,72px);line-height:1}
@@ -514,9 +533,9 @@ footer a{color:#141414}
     </div>
     <div>
       <div class="reveal d1">
-        <div class="dirname">Modern Coastal</div>
-        <div class="dirchosen">Soft whites · warm oak · natural texture · a whisper of pale blue</div>
-        <p class="lede faded" style="font-size:14px;max-width:47em">We chose it for this home because it suits the light in this part of the Shire and the family buyers it draws, calm enough to feel like a sanctuary and neutral enough that anyone can see their own life in it.</p>
+        <div class="dirname">The Integration Style</div>
+        <div class="dirchosen">A calm, warm palette · natural textures · open, uncluttered rooms</div>
+        <p class="lede faded" style="font-size:14px;max-width:47em">We depersonalise the home without emptying it. A calm, warm palette, natural textures and open, uncluttered rooms let the architecture lead, so every buyer can picture their own life here.</p>
         <div class="spectrum">
           <p class="snote">Where this scheme sits. Within it, we keep the living areas light and open, and let the master bedroom sit a touch deeper and moodier, so the home reads as more than one note.</p>
           <div class="barr"><span class="dot" style="left:30%"></span></div>
@@ -540,6 +559,11 @@ footer a{color:#141414}
         <figure><div class="ph"><img loading="lazy" src="https://bowerbirdinteriors.com.au/wp-content/uploads/5-7-2.jpg" alt="Modern Coastal dining"></div><figcaption>02 · Relaxed, sociable dining</figcaption></figure>
         <figure><div class="ph"><img loading="lazy" src="https://bowerbirdinteriors.com.au/wp-content/uploads/240906_Bowerbird_24AKyogleStreetMaroubra_005-1.jpg" alt="Modern Coastal living"></div><figcaption>03 · Pale blue against warm oak</figcaption></figure>
       </div>
+      </div>
+      <div class="principles reveal d2">
+        <div class="pr"><b>Broad appeal</b><p>Neutral, layered and never bland, so the home speaks to the widest pool of buyers.</p></div>
+        <div class="pr"><b>Flow and light</b><p>Furniture placed to open up sightlines and show how each space connects.</p></div>
+        <div class="pr"><b>Made for the camera</b><p>Every room composed for the listing photographs that will decide who books an inspection.</p></div>
       </div>
     </div>
   </div>
@@ -784,6 +808,22 @@ footer a{color:#141414}
         <a class="pill" href="#">Accept proposal <span class="arr">↗</span></a>
       </div>
     </div>
+    <div class="paychoose reveal d2">
+      <div class="phead"><span>Choose how you pay</span><span>Two ways, same styling</span></div>
+      <div class="paygrid">
+        <div class="payopt on" data-pay="settle" role="radio" aria-checked="true" tabindex="0">
+          <div class="oh"><b>Pay on Settlement</b><span class="odot"></span></div>
+          <p>Style now and pay from the proceeds of your sale, with our pay-later partner Elepay.</p>
+          <ul><li>$0 upfront</li><li>No repayments</li><li>No interest</li><li>No fees within 4 months</li></ul>
+          <p class="fine">To approved applicants, conditions apply. A small monthly fee applies after 4 months, capped at 12 months.</p>
+        </div>
+        <div class="payopt" data-pay="now" role="radio" aria-checked="false" tabindex="0">
+          <div class="oh"><b>Pay on invoice</b><span class="odot"></span></div>
+          <p>We send your invoice once you accept. Pay by bank transfer or card, no later than 3 business days before installation.</p>
+        </div>
+      </div>
+      <p class="payfine">Either way, you save a card as a payment method when you accept. Nothing is charged or held on it. It is used only as a last resort if an invoice goes unpaid, and we will tell you before any other charge.</p>
+    </div>
   </div>
 </section>
 
@@ -910,6 +950,9 @@ footer a{color:#141414}
   });
 
 })();
+  document.querySelectorAll('.payopt').forEach(function(o){o.addEventListener('click',function(){
+    document.querySelectorAll('.payopt').forEach(function(x){var on=x===o;x.classList.toggle('on',on);x.setAttribute('aria-checked',on?'true':'false');});
+  });});
 </script>
 </body>
 </html>
