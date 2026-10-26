@@ -308,9 +308,12 @@ a{color:inherit}
 /* ---------- investment ---------- */
 .invgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,72px);align-items:start}
 @media(max-width:860px){.invgrid{grid-template-columns:1fr}}
-.paychoose{margin-top:clamp(44px,7vh,72px)}
-.paygrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter);margin-top:14px;align-items:start}
-@media(max-width:860px){.paygrid{grid-template-columns:1fr}}
+.paychoose{margin-top:0}
+.paygrid{display:grid;grid-template-columns:1fr;gap:var(--gutter);margin-top:14px;align-items:start}
+.paychoose .payaccept{width:100%;justify-content:center;margin-top:var(--gutter)}
+.gettile{background:#F5F6F6;border-radius:8px;padding:32px;margin-top:var(--gutter)}
+.gettile .inclist{border-top:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0 48px}
+@media(max-width:860px){.gettile{padding:24px}.gettile .inclist{grid-template-columns:1fr}}
 .payopt{background:#F5F6F6;border:1px solid transparent;border-radius:8px;padding:28px;cursor:pointer;transition:border-color .2s}
 .payopt.on{border-color:var(--ink)}
 .payopt .oh{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:10px}
@@ -327,8 +330,8 @@ a{color:inherit}
 .inclist .no{font-family:var(--mono);font-weight:500;font-size:var(--t-mono);color:var(--faded);padding-top:3px}
 .inclist b{font-weight:500;display:block}
 .inclist small{color:var(--faded);font-size:12.5px}
-.pricepanel{position:sticky;top:84px}
-.pricepanel .phead,.invcol .phead,.paychoose .phead{display:flex;justify-content:space-between;font-family:var(--mono);font-size:var(--t-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faded);margin-bottom:14px}
+.pricepanel{}
+.pricepanel .phead,.invcol .phead,.paychoose .phead,.gettile .phead{display:flex;justify-content:space-between;font-family:var(--mono);font-size:var(--t-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faded);margin-bottom:14px}
 .pricepanel .amtcard{background:#F5F6F6;padding:24px;margin-bottom:8px}
 .pricepanel .free{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);border-radius:999px;padding:6px 12px;margin-bottom:18px}
 .pricepanel .amt{font-family:var(--sans);font-weight:400;font-size:clamp(46px,4.6vw,72px);line-height:1}
@@ -783,18 +786,7 @@ footer a{color:#141414}
     <div class="lab reveal">Your Investment</div>
     <h2 class="bighead reveal d1">One fee, everything included, four weeks free</h2>
     <div class="invgrid" style="margin-top:clamp(24px,4vh,44px)">
-      <div class="invcol reveal d1">
-        <div class="phead"><span>What you're getting</span><span>Included in your fee</span></div>
-        <div class="inclist">
-        <div class="row"><div class="no">01</div><div><b>Furniture selection</b><small>Designed for your home and your buyer, not pulled off a shelf</small></div></div>
-        <div class="row"><div class="no">02</div><div><b>Project management</b><small>One point of contact from acceptance to removal</small></div></div>
-        <div class="row"><div class="no">03</div><div><b>Delivery</b><small>Our own fleet and installers, not a third party</small></div></div>
-        <div class="row"><div class="no">04</div><div><b>Installation and styling</b><small>Styled on site, ready to photograph</small></div></div>
-        <div class="row"><div class="no">05</div><div><b>Removal</b><small>We collect everything once you have sold</small></div></div>
-        <div class="row"><div class="no">06</div><div><b>Insurance</b><small>The goods are covered for the hire period</small></div></div>
-      </div>
-      </div>
-      <div class="pricepanel reveal d2">
+      <div class="pricepanel reveal d1">
         <div class="phead"><span>Investment summary</span><span>GST inclusive</span></div>
         <div class="amtcard">
           <span class="free">8 weeks</span>
@@ -805,24 +797,35 @@ footer a{color:#141414}
         <div class="prow"><span>Hire period</span><b>8 WEEKS (4 FREE)</b></div>
         <div class="prow"><span>Weekly rate beyond term</span><b>$1,990</b></div>
         <p class="terms">Payable up front, or nothing today under Pay on Settlement. The weekly rate applies only if you extend beyond the eight-week term.</p>
-        <a class="pill" href="#">Accept proposal <span class="arr">↗</span></a>
+      </div>
+      <div class="paychoose reveal d2">
+        <div class="phead"><span>Choose how you pay</span><span>Two ways, same styling</span></div>
+        <div class="paygrid">
+          <div class="payopt on" data-pay="settle" role="radio" aria-checked="true" tabindex="0">
+            <div class="oh"><b>Pay on Settlement</b><span class="odot"></span></div>
+            <p>Style now and pay from the proceeds of your sale, with our pay-later partner Elepay.</p>
+            <ul><li>$0 upfront</li><li>No repayments</li><li>No interest</li><li>No fees within 4 months</li></ul>
+            <p class="fine">To approved applicants, conditions apply. A small monthly fee applies after 4 months, capped at 12 months.</p>
+          </div>
+          <div class="payopt" data-pay="now" role="radio" aria-checked="false" tabindex="0">
+            <div class="oh"><b>Pay on invoice</b><span class="odot"></span></div>
+            <p>We send your invoice once you accept. Pay by bank transfer or card, no later than 3 business days before installation.</p>
+          </div>
+        </div>
+        <a class="pill payaccept" href="#">Accept proposal <span class="arr">↗</span></a>
+        <p class="payfine">Either way, you save a card as a payment method when you accept. Nothing is charged or held on it. It is used only as a last resort if an invoice goes unpaid, and we will tell you before any other charge.</p>
       </div>
     </div>
-    <div class="paychoose reveal d2">
-      <div class="phead"><span>Choose how you pay</span><span>Two ways, same styling</span></div>
-      <div class="paygrid">
-        <div class="payopt on" data-pay="settle" role="radio" aria-checked="true" tabindex="0">
-          <div class="oh"><b>Pay on Settlement</b><span class="odot"></span></div>
-          <p>Style now and pay from the proceeds of your sale, with our pay-later partner Elepay.</p>
-          <ul><li>$0 upfront</li><li>No repayments</li><li>No interest</li><li>No fees within 4 months</li></ul>
-          <p class="fine">To approved applicants, conditions apply. A small monthly fee applies after 4 months, capped at 12 months.</p>
-        </div>
-        <div class="payopt" data-pay="now" role="radio" aria-checked="false" tabindex="0">
-          <div class="oh"><b>Pay on invoice</b><span class="odot"></span></div>
-          <p>We send your invoice once you accept. Pay by bank transfer or card, no later than 3 business days before installation.</p>
-        </div>
+    <div class="gettile reveal d2">
+      <div class="phead"><span>What you're getting</span><span>Included in your fee</span></div>
+      <div class="inclist">
+        <div class="row"><div class="no">01</div><div><b>Furniture selection</b><small>Designed for your home and your buyer, not pulled off a shelf</small></div></div>
+        <div class="row"><div class="no">02</div><div><b>Project management</b><small>One point of contact from acceptance to removal</small></div></div>
+        <div class="row"><div class="no">03</div><div><b>Delivery</b><small>Our own fleet and installers, not a third party</small></div></div>
+        <div class="row"><div class="no">04</div><div><b>Installation and styling</b><small>Styled on site, ready to photograph</small></div></div>
+        <div class="row"><div class="no">05</div><div><b>Removal</b><small>We collect everything once you have sold</small></div></div>
+        <div class="row"><div class="no">06</div><div><b>Insurance</b><small>The goods are covered for the hire period</small></div></div>
       </div>
-      <p class="payfine">Either way, you save a card as a payment method when you accept. Nothing is charged or held on it. It is used only as a last resort if an invoice goes unpaid, and we will tell you before any other charge.</p>
     </div>
   </div>
 </section>
