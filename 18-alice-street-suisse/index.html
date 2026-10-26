@@ -133,9 +133,13 @@ h2{font-size:var(--h2);line-height:1.08;max-width:22ch}
 .wstats div{border-top:1px solid var(--line);padding-top:16px}
 .wstats b{display:block;font-weight:400;font-size:clamp(30px,3vw,48px);letter-spacing:-.02em}
 .wstats span{display:block;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--faded);margin-top:10px}
-.quote{margin:clamp(48px,7vh,84px) auto 0;max-width:46ch;text-align:center}
-.quote p{font-size:clamp(19px,1.8vw,25px);font-weight:400;line-height:1.5;letter-spacing:-.01em;margin:0}
-.quote span{display:block;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--faded);margin-top:18px}
+.revhead{display:flex;justify-content:space-between;gap:16px;margin:clamp(48px,7vh,84px) 0 16px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gut)}
+@media(max-width:860px){.revs{grid-template-columns:1fr}}
+.rev{background:#FFFFFF;border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:13px}
+.rev .stars{font-size:11px;letter-spacing:3px}
+.rev p{margin:0;font-size:13.5px;line-height:1.65;color:var(--soft)}
+.rev span{font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--faded);margin-top:auto}
 
 /* ---------- return ---------- */
 .ret{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gut);margin-top:clamp(44px,6vh,72px)}
@@ -394,9 +398,11 @@ footer .legal{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap
       <div><b>50+</b><span>Specialists, one team</span></div>
       <div><b>2013</b><span>Styling Sydney since</span></div>
     </div>
-    <div class="quote">
-      <p>"We were nervous about the cost, but our home sold in the first week and above what we had hoped."</p>
-      <span>David and Anh T. · Gymea · 4.9 on Google, 240+ reviews</span>
+    <div class="revhead"><span class="lab" style="margin:0">What sellers say</span><span class="lab" style="margin:0">4.9 on Google · 240+ reviews</span></div>
+    <div class="revs">
+      <div class="rev"><span class="stars">★★★★★</span><p>From the first walk-through to install day, the team was calm, professional and completely across the detail. The house looked better than we ever imagined.</p><span>Rebecca M. · Cronulla</span></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>We were nervous about the cost, but our home sold in the first week and above what we had hoped. The best money we spent on the whole campaign.</p><span>David and Anh T. · Gymea</span></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>Beautiful, considered styling that suited the house perfectly. Nothing felt generic, and the install team were lovely. Every step was seamless.</p><span>Priya K. · Caringbah</span></div>
     </div>
   </div>
 </div></section>
