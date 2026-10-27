@@ -137,13 +137,13 @@ h2{font-size:var(--h2);line-height:1.08;max-width:22ch}
 /* ---------- who ---------- */
 .wstats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gut);margin-top:clamp(44px,6vh,72px)}
 @media(max-width:700px){.wstats{grid-template-columns:1fr 1fr;gap:28px var(--gut)}}
-.wstats div{border-top:1px solid var(--line);padding-top:16px}
+.wstats div{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0 18px}
 .wstats b{display:block;font-weight:400;font-size:clamp(30px,3vw,48px);letter-spacing:-.02em}
 .wstats span{display:block;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--faded);margin-top:10px}
 .revhead{display:flex;justify-content:space-between;gap:16px;margin:clamp(48px,7vh,84px) 0 16px}
 .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gut)}
 @media(max-width:860px){.revs{grid-template-columns:1fr}}
-.rev{background:#FFFFFF;border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:13px}
+.rev{background:transparent;border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:13px}
 .rev .stars{font-size:11px;letter-spacing:3px}
 .rev p{margin:0;font-size:13.5px;line-height:1.65;color:var(--soft)}
 .rev span{font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--faded);margin-top:auto}
