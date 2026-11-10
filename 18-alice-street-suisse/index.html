@@ -43,6 +43,7 @@ h1,h2,h3{margin:0;font-weight:500;letter-spacing:-.03em;color:var(--ink)}
 .bar .wmsvg{height:10px;width:auto;display:block}
 .bar .mid{color:var(--faded)}
 .bar a.acc{position:fixed;top:16px;right:var(--gut);z-index:90;background:var(--ink);color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:12px 20px;font-weight:500;font-size:11px;letter-spacing:.14em}
+@media(max-width:700px){.bar a.acc{top:auto;bottom:14px;left:16px;right:16px;text-align:center;padding:15px 20px;box-shadow:0 6px 24px rgba(20,20,20,.18)}}
 
 /* ---------- masthead ---------- */
 .mast{text-align:center;padding:clamp(60px,9vh,120px) var(--gut) clamp(48px,7vh,88px)}
@@ -91,7 +92,7 @@ h2{font-size:var(--h2);line-height:1.08;max-width:22ch}
 /* ---------- property facts ---------- */
 .facts{display:flex;gap:24px;margin:clamp(28px,4vh,40px) 0 clamp(40px,6vh,64px)}
 .facts>div{border:1px solid var(--line);border-radius:8px;padding:18px 28px 20px;flex:1 1 0;text-align:center}
-@media(max-width:700px){.facts{flex-wrap:wrap}}
+@media(max-width:700px){.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.facts>div{padding:14px 8px 16px}}
 .facts .k{font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--faded)}
 .facts .v{font-size:clamp(24px,2.2vw,34px);font-weight:400;letter-spacing:-.02em;margin-top:8px}
 
