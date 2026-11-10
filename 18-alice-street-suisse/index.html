@@ -106,6 +106,13 @@ h2{font-size:var(--h2);line-height:1.08;max-width:22ch}
 .gduo{display:grid;grid-template-columns:1fr 1fr;gap:var(--gut);margin-top:var(--gut)}
 @media(max-width:700px){.gduo{grid-template-columns:1fr}}
 .gduo .px{aspect-ratio:4/3}
+.gmorebtn{display:none}
+@media(max-width:700px){
+  .gxtra{display:none}
+  .gxtra.open{display:block}
+  .gmorebtn{display:block;width:100%;margin-top:var(--gut);padding:15px;background:transparent;border:1px solid var(--ink);border-radius:999px;font-family:inherit;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);cursor:pointer}
+  .gmorebtn.hide{display:none}
+}
 .princ{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gut);margin-top:clamp(44px,6vh,72px)}
 @media(max-width:700px){.princ{grid-template-columns:1fr;gap:22px}}
 .princ div{border-top:1px solid var(--line);padding-top:14px}
@@ -337,6 +344,7 @@ footer .legal{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap
       <div class="px"><img loading="lazy" src="https://bowerbirdinteriors.com.au/wp-content/uploads/5-7-2.jpg" alt=""></div>
       <div class="px"><img loading="lazy" src="https://bowerbirdinteriors.com.au/wp-content/uploads/240906_Bowerbird_24AKyogleStreetMaroubra_005-1.jpg" alt=""></div>
     </div>
+    <div class="gxtra" id="gxtra">
     <div class="gduo">
       <div class="px"><img loading="lazy" src="media/dd5.jpg" alt="Living room with soft neutral sofa and timber joinery"></div>
       <div class="px"><img loading="lazy" src="media/dd2.jpg" alt="Kitchen island with timber stools and arched window"></div>
@@ -346,6 +354,8 @@ footer .legal{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap
       <div class="px"><img loading="lazy" src="media/dd7.jpg" alt="Living room opening to a garden"></div>
       <div class="px"><img loading="lazy" src="media/dd8.jpg" alt="Boucle armchair beside a stone fireplace"></div>
     </div>
+    </div>
+    <button class="gmorebtn" id="gmorebtn" type="button">Load more photos</button>
     <div class="princ">
       <div><b>Broad appeal</b><p>Neutral and layered, never bland — the widest pool of buyers.</p></div>
       <div><b>Flow and light</b><p>Placed to open sightlines and show how the spaces connect.</p></div>
@@ -627,6 +637,8 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
 }
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  var gb=document.getElementById("gmorebtn");
+  if(gb){gb.addEventListener("click",function(){document.getElementById("gxtra").classList.add("open");gb.classList.add("hide");});}
 </script>
 </body>
 </html>
